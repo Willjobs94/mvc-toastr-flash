@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>RedWillow.MvcToastrFlash</id>
+    <version>1.0.0</version>
+    <title>MVC Toastr Flash</title>
+    <authors>Jason Kelly</authors>
+    <owners>Red Willow</owners>
+    <description>
+      This package adds Rails-like flash functionality to your MVC controllers, backed by the excellent Toastr JavaScript notification library. Flash notifications are persisted through redirects and are removed when shown.
+    </description>
+    <releaseNotes>
+    </releaseNotes>
+    <summary>
+      Add Rails-like flash functionality to your MVC controllers, backed by the excellent Toastr JavaScript notification library.
+    </summary>
+    <language>en-US</language>
+    <projectUrl>https://github.com/red-willow/mvc-toastr-flash</projectUrl>
+    <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/red-willow/mvc-toastr-flash/blob/master/LICENSE-MIT.md</licenseUrl>
+    <copyright>Copyright (c) 2016 Red Willow</copyright>
+    <dependencies>
+        <dependency id="Microsoft.AspNet.Mvc" version="3.0.20105.1" />
+        <dependency id="toastr" version="2.1.1" />
+    </dependencies>
+    <references></references>
+    <tags>mvc toastr flash</tags>
+  </metadata>
+  <files>
+    <file src="bin\Release\RedWillow.MvcToastrFlash.dll" target="lib\net45\" />
+    <file src="bin\Release\RedWillow.MvcToastrFlash.pdb" target="lib\net45\" />
+  </files>
+</package>
