@@ -4,7 +4,7 @@ This package adds Rails-like flash functionality to your MVC controllers, backed
 
 ## Install
 
-Best way to install is via [Nuget](https://nuget.org):
+Best way to install is via [NuGet](https://www.nuget.org/packages/RedWillow.MvcToastrFlash):
 
 ```
 PM> Install-Package RedWillow.MvcToastrFlash

@@ -25,7 +25,7 @@
         <dependency id="toastr" version="2.1.1" />
     </dependencies>
     <references></references>
-    <tags>mvc toastr flash</tags>
+    <tags>mvc toastr flash notification</tags>
   </metadata>
   <files>
     <file src="bin\Release\RedWillow.MvcToastrFlash.dll" target="lib\net45\" />
