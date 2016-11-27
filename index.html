@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Mvc-toastr-flash : Add Rails-like flash functionality to your ASP.NET MVC controllers.">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Mvc-toastr-flash</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/red-willow/mvc-toastr-flash">View on GitHub</a>
+
+          <h1 id="project_title">Mvc-toastr-flash</h1>
+          <h2 id="project_tagline">Add Rails-like flash functionality to your ASP.NET MVC controllers.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/red-willow/mvc-toastr-flash/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/red-willow/mvc-toastr-flash/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="mvc-toastr-flash" class="anchor" href="#mvc-toastr-flash" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MVC Toastr Flash</h1>
+
+<p>This package adds Rails-like flash functionality to your MVC controllers, backed by the excellent <a href="http://codeseven.github.io/toastr/">Toastr</a> JavaScript notification library. Flash notifications are persisted through redirects and are removed when shown.</p>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+
+<p>Best way to install is via <a href="https://www.nuget.org/packages/RedWillow.MvcToastrFlash">NuGet</a>:</p>
+
+<pre><code>PM&gt; Install-Package RedWillow.MvcToastrFlash
+</code></pre>
+
+<p>This package has the following NuGet dependencies:</p>
+
+<ul>
+<li>
+<a href="https://www.nuget.org/packages/Microsoft.AspNet.Mvc">Microsoft.AspNet.Mvc</a>, version &gt;= 3.0.20105.1</li>
+<li>
+<a href="https://www.nuget.org/packages/toastr">toastr</a>, version &gt;= 2.1.1</li>
+</ul>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>First, follow the steps required to get Toastr up and working: <a href="https://www.nuget.org/packages/toastr">https://www.nuget.org/packages/toastr</a></p>
+
+<h3>
+<a id="layouts--views" class="anchor" href="#layouts--views" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Layouts / Views</h3>
+
+<p>At the top of your layouts pages, or views that don't use layouts (that you want Toastr notifications to appear on) add:</p>
+
+<div class="highlight highlight-source-cs"><pre>@using RedWillow.MvcToastrFlash</pre></div>
+
+<p>And following the <code>@RenderSection("scripts", required: false)</code> near the bottom add (should be right before the closing <code>body</code> tag):</p>
+
+<div class="highlight highlight-source-cs"><pre>@Html.ToastrNotifications()</pre></div>
+
+<h3>
+<a id="controllers" class="anchor" href="#controllers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Controllers</h3>
+
+<p>Add this <code>using</code> statement:</p>
+
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">using</span> <span class="pl-en">RedWillow.MvcToastrFlash</span>;</pre></div>
+
+<p>Then, flash notifications to your heart's content:</p>
+
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">public</span> ActionResult Index()
+{
+    <span class="pl-c1">this</span>.Flash(Toastr.SUCCESS, <span class="pl-s"><span class="pl-pds">"</span>Welcome!<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Glad you arrived safely.<span class="pl-pds">"</span></span>);
+
+    <span class="pl-k">return</span> View();
+}</pre></div>
+
+<p>See the Sample project for more usage examples.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>The MVC Toastr Flash package is released under a <a href="http://opensource.org/licenses/MIT">MIT license</a></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Mvc-toastr-flash maintained by <a href="https://github.com/red-willow">red-willow</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
