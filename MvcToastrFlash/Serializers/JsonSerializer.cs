@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 
 namespace RedWillow.MvcToastrFlash.Serializers
@@ -32,7 +33,7 @@ namespace RedWillow.MvcToastrFlash.Serializers
             var properties = new List<string>();
             
 
-            foreach(var propertyInfo in value.GetType().GetProperties())
+            foreach(var propertyInfo in value.GetType().GetTypeInfo().GetProperties())
             {
                 var name = propertyInfo.Name.Replace("\"", "\\\"");
                 var data = propertyInfo.GetValue(value, null);
