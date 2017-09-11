@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcToastrFlash.Tests", "MvcToastrFlash.Tests\MvcToastrFlash.Tests.csproj", "{C599976E-B496-4685-A089-C77E3B7ECDB2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "Sample\Sample.csproj", "{35930D05-333B-4D9A-8A97-6AF2B5F3CC29}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MvcToastrFlash", "MvcToastrFlash\MvcToastrFlash.xproj", "{9B105751-9617-4B15-807B-68445368AC41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcToastrFlash", "MvcToastrFlash\MvcToastrFlash.csproj", "{9B105751-9617-4B15-807B-68445368AC41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

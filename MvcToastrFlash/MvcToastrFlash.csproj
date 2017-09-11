@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>This package adds Rails-like flash functionality to your MVC controllers, backed by the excellent Toastr JavaScript notification library. Flash notifications are persisted through redirects and are removed when shown.</Description>
+    <Copyright>Copyright (c) 2016 Red Willow</Copyright>
+    <AssemblyTitle>MVC Toastr Flash</AssemblyTitle>
+    <VersionPrefix>1.1.0</VersionPrefix>
+    <Authors>Jason Kelly</Authors>
+    <TargetFrameworks>net45;netstandard1.6</TargetFrameworks>
+    <AssemblyName>RedWillow.MvcToastrFlash</AssemblyName>
+    <PackageId>MvcToastrFlash</PackageId>
+    <PackageTags>asp.net;mvc;asp;toast;toastr;flash;asp.net 5</PackageTags>
+    <PackageIconUrl>https://red-willow.github.io/mvc-toastr-flash/images/rw64.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/red-willow/mvc-toastr-flash</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/red-willow/mvc-toastr-flash#license</PackageLicenseUrl>
+    <PackageTargetFallback Condition=" '$(TargetFramework)' == 'netstandard1.6' ">$(PackageTargetFallback);dotnet;portable-net451+win8</PackageTargetFallback>
+    <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.6' ">1.6.1</NetStandardImplicitPackageVersion>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="3.0.20105.1" />
+    <PackageReference Include="Microsoft.AspNet.Razor" Version="1.0.20105.408" />
+    <PackageReference Include="Microsoft.AspNet.WebPages" Version="1.0.20105.408" />
+    <PackageReference Include="Microsoft.Web.Infrastructure" Version="1.0.0.0" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    <DefineConstants>$(DefineConstants);FULLBUILD</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.6' ">
+    <DefineConstants>$(DefineConstants);COREBUILD</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.6' ">
+    <PackageReference Include="Microsoft.AspNetCore.Html.Abstractions" Version="1.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="1.0.3" />
+  </ItemGroup>
+
+</Project>
