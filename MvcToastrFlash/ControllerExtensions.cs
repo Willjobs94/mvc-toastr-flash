@@ -1,5 +1,9 @@
 ﻿using RedWillow.MvcToastrFlash.Models;
+#if (FULLBUILD)
 using System.Web.Mvc;
+#else
+using Microsoft.AspNetCore.Mvc;
+#endif
 
 namespace RedWillow.MvcToastrFlash
 {

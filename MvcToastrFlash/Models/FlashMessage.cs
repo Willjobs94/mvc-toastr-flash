@@ -6,7 +6,9 @@ namespace RedWillow.MvcToastrFlash.Models
     /// <summary>
     /// Object that represents a Toastr notification message.
     /// </summary>
+#if (FULLBUILD)
     [Serializable]
+#endif
     internal class FlashMessage
     {
         /// <summary>

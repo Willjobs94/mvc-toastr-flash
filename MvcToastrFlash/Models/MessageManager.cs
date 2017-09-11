@@ -1,20 +1,24 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Web.Mvc;
+#if (FULLBUILD)
+using ITempDataDictionary = System.Web.Mvc.TempDataDictionary;
+#else
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#endif
 
 namespace RedWillow.MvcToastrFlash.Models
 {
     /// <summary>
     /// Manager used for storing <see cref="FlashMessage"/> messages in the Controller's
-    /// <see cref="TempDataDictionary"/> and for providing access to them at render time.
+    /// <see cref="ITempDataDictionary"/> and for providing access to them at render time.
     /// When the message is rendered (iterated over) it is removed from the
-    /// <see cref="TempDataDictionary"/> store.
+    /// <see cref="ITempDataDictionary"/> store.
     /// </summary>
     /// <seealso cref="System.Collections.Generic.IEnumerable{FlashMessage}" />
     internal class MessageManager : IEnumerable<FlashMessage>
     {
-        private readonly TempDataDictionary _tempData;
+        private readonly ITempDataDictionary _tempData;
         private readonly List<FlashMessage> _messageList;
 
         /// <summary>
@@ -22,7 +26,7 @@ namespace RedWillow.MvcToastrFlash.Models
         /// </summary>
         /// <param name="tempData">The Controller's temporary data dictionary.</param>
         /// <exception cref="System.ArgumentNullException">If tempData is null.</exception>
-        public MessageManager(TempDataDictionary tempData)
+        public MessageManager(ITempDataDictionary tempData)
         {
             if (tempData == null)
                 throw new ArgumentNullException("tempData");
@@ -85,7 +89,7 @@ namespace RedWillow.MvcToastrFlash.Models
         }
 
         /// <summary>
-        /// Saves the message list to the <see cref="TempDataDictionary"/>.
+        /// Saves the message list to the <see cref="ITempDataDictionary"/>.
         /// </summary>
         private void SaveMessageList()
         {

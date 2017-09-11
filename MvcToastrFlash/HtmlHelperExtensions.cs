@@ -2,7 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+#if (FULLBUILD)
 using System.Web.Mvc;
+using HtmlString = System.Web.Mvc.MvcHtmlString;
+#else
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Html;
+#endif
 
 namespace RedWillow.MvcToastrFlash
 {
@@ -16,11 +22,11 @@ namespace RedWillow.MvcToastrFlash
         /// </summary>
         /// <param name="htmlHelper">HtmlHelper to extend.</param>
         /// <returns>JavaScript script block to display Toastr notifications.</returns>
-        public static MvcHtmlString ToastrNotifications(this HtmlHelper htmlHelper)
+        public static HtmlString ToastrNotifications(this HtmlHelper htmlHelper)
         {
             var messages = new MessageManager(htmlHelper.ViewContext.TempData);
             if (messages.Count <= 0)
-                return new MvcHtmlString(string.Empty);
+                return new HtmlString(string.Empty);
 
             var toastrCalls = new StringBuilder();
             foreach (var message in messages)
@@ -32,7 +38,7 @@ namespace RedWillow.MvcToastrFlash
                     GetToastrFunctionCall(message.Severity), GetToastrFunctionParameters(message)));
             }
 
-            return new MvcHtmlString(GetScriptBlock(toastrCalls.ToString()));
+            return new HtmlString(GetScriptBlock(toastrCalls.ToString()));
         }
 
         /// <summary>
